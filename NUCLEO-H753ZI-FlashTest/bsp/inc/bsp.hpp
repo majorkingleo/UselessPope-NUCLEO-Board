@@ -6,7 +6,6 @@
 #include <cstdint>
 #include <exmath.hpp>
 #include <os.hpp>
-#include "bsp_version_number.hpp"
 
 namespace BSP
 {
@@ -63,8 +62,6 @@ namespace BSP
   wlib::io::DigitalOutput_Interface& get_output_LED_green();
   // bslib::gpio::DigitalOutput_Interface& get_output_LED_yellow();
   // bslib::gpio::DigitalOutput_Interface& get_output_LED_red();
-
-  bslib::HWCoding_Interface& get_hw_coding();
 
   wlib::CharPuplisher&        get_uart_input_debug();
   wlib::StringSink_Interface& get_uart_output_debug();

@@ -11,7 +11,9 @@ message(STATUS "########################|")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/LED")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Container")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Publisher")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Provider")
 add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/Utility_Interfaces")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/H753_internal_flash_update_memory")
 
 
 
@@ -33,6 +35,7 @@ target_link_libraries(${target_name}
  PUBLIC BSLIB_PUBLISHER
  PUBLIC BSLIB_UTILITY_INTERFACES
  PUBLIC BSLIB_PROVIDER
+ PUBLIC H753_INTERNAL_FLASH_UPDATE_MEMORY
  PUBLIC WLIB
  PUBLIC EXMATH
  PUBLIC OS

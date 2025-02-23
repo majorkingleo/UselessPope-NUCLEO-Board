@@ -30,6 +30,7 @@ target_link_libraries(${target_name}
  PRIVATE SERIAL_COMMAND_PARSER
  PRIVATE simpleflashfs
  PRIVATE cpputils
+ PRIVATE EXMATH
 )
 
 target_link_options(${target_name}

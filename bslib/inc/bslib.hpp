@@ -3,13 +3,10 @@
 #define BSLIB_HPP_INCLUDED
 
 #include <bslib-Container.hpp>
-#include <bslib-HWCoding.hpp>
-#include <bslib-JukeBox.hpp>
 #include <bslib-LED.hpp>
-#include <bslib-PowerObserver_Interface.hpp>
 #include <bslib-Provider.hpp>
 #include <bslib-Publisher.hpp>
-#include <bslib-VersionNumber.hpp>
 #include <bslib-utility_Interfaces.hpp>
+#include <bslib-h753_internal_flash_update_memory.hpp>
 
 #endif

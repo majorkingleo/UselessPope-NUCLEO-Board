@@ -26,19 +26,7 @@
 #include <SimpleIni.h>
 #include <SimpleFlashFsFileBuffer.h>
 #include <unistd.h>
-#include <can_config.hpp>
-#include <canopen.hpp>
-#include <canopen_legacy_updater.hpp>
-#include <bsp_canopen.hpp>
-#include "serial_nr_canopen_adapter.hpp"
 #include "AnalogValueLogger.hpp"
-#include <canopen_instance1_names.h>
-#include "UtilityValues_CANOpen_Adapter.hpp"
-#include "FunnelModule_CANOpen_Adapter.hpp"
-#include "SimpleFill_CANOpen_Adapter.hpp"
-#include "AirPump_CANOpen_Adapter.hpp"
-#include "FunnelModule.hpp"
-#include "SimpleFillModule.hpp"
 
 using namespace Tools;
 using namespace app;
@@ -514,8 +502,6 @@ static void test_y2038()
 	}
 }
 
-serial_nr_RPC_adapter pcb_sn;
-
 int main()
 {
 #ifndef NDEBUG
@@ -570,38 +556,6 @@ int main()
   static LogTemperature temperature_logger{ BSP::get_analog_value_publisher(), "cpu.ini" };
   TEMPERATURE_LOGGER = &temperature_logger;
 
-
-  using CANOpen             = canopen::CanOpen_Interface;
-  canopen::CanOpenSlave can = { BSP::get_canopen_HWUnit_1(), CANOpen::NodeId{ 0x48 }, CANOpen::Baudrate::_1000kb, canopen::config::get_config_1(),
-                                BSP::get_can_identity_object_1() };
-
-  can.config_heartbeat_producer(std::chrono::milliseconds(1000));
-  can.register_updater(BSP::get_canopen_updater());
-
-  AirPumpModule 	air_pump_module;
-  FunnelModule  	funnel_module;
-  SimpleFillModule	simplefill_module;
-
-  app::FunnelModule_CANOpen_Adapter     funnel_module_can_adapter{ funnel_module, can, sink };
-  app::SimpleFill_CANOpen_Adapter       simplefill_can_adapter{ simplefill_module, can, sink };
-  app::AirPump_CANOpen_Adapter       	air_pump_can_adapter{ air_pump_module, can, sink };
-
-  canopen::RPC_Slave<20>             rpc_slave;
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::GetPcbSerialNr::Id), pcb_sn.getter());
-
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::FunnelSetTargetTemperature::Id), funnel_module_can_adapter.set_target_temperature_rpc());
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::FunnelChangeState::Id), funnel_module_can_adapter.change_state_rpc());
-
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::SimpleFillSet::Id), simplefill_can_adapter.set_rpc());
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::SimpleFillChangeState::Id), simplefill_can_adapter.change_state_rpc());
-
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::AirPumpSet::Id), air_pump_can_adapter.set_rpc());
-  rpc_slave.add_rpc(canopen::RPC_Id(canopen::instance1::OsCommands::AirPumpChangeState::Id), air_pump_can_adapter.change_state_rpc());
-
-  app::UtilityValues_CANOpen_Adapter utility_values_adapter{ anal_logger, can, sink };
-
-  can.set_rpc_slave(rpc_slave);
-  can.connect();
 
   do
   {
