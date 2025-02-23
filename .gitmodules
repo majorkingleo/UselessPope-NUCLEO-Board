@@ -1,6 +1,6 @@
 [submodule "simpleflashfs/simpleflashfs"]
 	path = simpleflashfs/simpleflashfs
 	url = git@github.com:majorkingleo/simpleflashfs.git
-[submodule "cpputils/cpputils"]
-	path = cpputils/cpputils
+[submodule "cpputils"]
+	path = cpputils
 	url = git@github.com:majorkingleo/cpputils.git
