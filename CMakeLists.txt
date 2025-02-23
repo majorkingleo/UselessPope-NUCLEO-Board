@@ -117,31 +117,18 @@ endif()
 
 enable_testing()
 
-if(MSVC)
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/ut_catch")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/pc_os")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/wlib")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/ex-math")
-
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/measurement")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/measurement/tst")
-
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/pc_sim_measurement_board")
-else()
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/os")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/bslib")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/wlib")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/uc-lib")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/os")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/bslib")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/wlib")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/uc-lib")
  #add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/sensors")
  #add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/ex-math")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/cpputils")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/simpleflashfs")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/SerialCommandParser")
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/SerialAdapter")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/cpputils")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/simpleflashfs")
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/SerialCommandParser")
+
+add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/NUCLEO-H753ZI-FlashTest")
  
- add_subdirectory("${CMAKE_CURRENT_LIST_DIR}/NUCLEO-H753ZI-FlashTest")
- 
-endif()
 
 
 
