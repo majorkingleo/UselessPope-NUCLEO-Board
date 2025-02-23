@@ -36,7 +36,7 @@
       "description": "Target STM32H753 with the Visual Studio development environment. (Release)",
       "inherits": "STM32H753_Base",
       "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
-    },
+    }
   ],
   "buildPresets": [
     {
