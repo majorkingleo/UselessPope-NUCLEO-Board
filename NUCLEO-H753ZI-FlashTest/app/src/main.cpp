@@ -411,13 +411,39 @@ bool cmd_quit(bslib::StringSink_Interface& sink, std::string_view param)
 #    define __attribute__(x)
 #endif
 
-std::array<uint64_t,  1 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_status_led;
-std::array<uint64_t,  4 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_usb_uart_reader;
-std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_cmd_parser;
-std::array<uint64_t,  5 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_adc3;
-std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> /*__attribute__((section(".reserved_for_stack")))*/ stack_main_array;
+#ifndef SIMULATOR
+extern void *_estack;
+extern void *__reserved_for_main_stack_start__;
+
+std::span<uint64_t> get_default_and_os_stack()
+{
+    std::byte* b_end = reinterpret_cast<std::byte*>(&_estack);
+    std::byte* b_start = reinterpret_cast<std::byte*>(&__reserved_for_main_stack_start__);
+
+    unsigned size = b_end - b_start;
+/*
+    auto & sink = BSP::get_uart_output_debug();
+
+    sink( static_format<100>("main stack: 0x%X _estack: 0x%X size: %d KB\n",
+            uintptr_t(b_start),
+            uintptr_t(b_end),
+            size / 1024 ).c_str() );
+*/
+    return { reinterpret_cast<uint64_t*>(b_start), size / sizeof(uint64_t) };
+}
+#endif
+
+
+std::array<uint64_t,  1 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))      stack_status_led;
+std::array<uint64_t,  4 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))      stack_usb_uart_reader;
+std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))      stack_cmd_parser;
+std::array<uint64_t,  5 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))      stack_adc3;
+std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))		stack_main_array;
 std::span<uint64_t>                                                                                     stack_main(stack_main_array);
 
+#ifndef SIMULATOR
+std::span<uint64_t>                                                                                      stack_default_and_os = get_default_and_os_stack();
+#endif
 
 #ifdef _MSC_VER
 #    undef __attribute__
@@ -462,6 +488,10 @@ void StackAnalyzer::print( wlib::StringSink_Interface& sink) const
     analyze(stack_status_led, 		"Status LED     ");
     analyze(stack_usb_uart_reader, 	"USB UART Reader");
     analyze(stack_cmd_parser, 		"CMD Parser     ");
+    analyze(stack_main, 			"main           ");
+#ifndef SIMULATOR
+    analyze(stack_default_and_os,	"DefaultAndOs   ");
+#endif
     sink("\n");
 }
 

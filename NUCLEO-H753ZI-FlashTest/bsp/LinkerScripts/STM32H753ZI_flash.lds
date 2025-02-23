@@ -7,6 +7,7 @@ ENTRY(Reset_Handler)
 
 MEMORY
 {
+	ITCMRAM (RWX)     : ORIGIN = 0x00000000, LENGTH = 64K
     FLASH (RX)        : ORIGIN = 0x08000000, LENGTH = 1M - 128k
     FLASH_DATA_1 (R)  : ORIGIN = 0x080E0000, LENGTH = 128K
     FLASH_UPDATE (RX) : ORIGIN = 0x08100000, LENGTH = 1M - 128k    
@@ -14,11 +15,12 @@ MEMORY
     DTCMRAM (RWX)     : ORIGIN = 0x20000000, LENGTH = 128K
     RAM_D1 (RWX)      : ORIGIN = 0x24000000, LENGTH = 512K    						                                
     RAM_D2 (RWX)      : ORIGIN = 0x30000000, LENGTH = 288K
-    RAM_D3 (RWX)      : ORIGIN = 0x38000000, LENGTH = 64K
-    ITCMRAM (RWX)     : ORIGIN = 0x00000000, LENGTH = 64K                                 
+    RAM_D3 (RWX)      : ORIGIN = 0x38000000, LENGTH = 64K                                    
 }
 
 _estack = ORIGIN(RAM_D3) + LENGTH(RAM_D3);
+_Max_Heap_Size = 10K;
+_Main_Stack_Size = LENGTH(RAM_D3);
 
 _FLASH_DATA_1      = ORIGIN(FLASH_DATA_1);
 _FLASH_DATA_1_SIZE = LENGTH(FLASH_DATA_1);
@@ -137,8 +139,9 @@ SECTIONS
         PROVIDE(__heap_start__ = .);
         KEEP(*(.heap))
         . = ALIGN(4);
+        . = _Max_Heap_Size;
         PROVIDE(__heap_end__ = .);
-    } > DTCMRAM
+    } > RAM_D1
 
     .reserved_for_stack (NOLOAD) :
     {
@@ -156,7 +159,18 @@ SECTIONS
         KEEP(*(.reserved_for_DMA_BUFFER))
         . = ALIGN(32);
         PROVIDE(__reserved_for_DMA_BUFFER_end__ = .);
-    } > RAM_D2
+    } > RAM_D1
+    
+    .reserved_for_main_stack (NOLOAD) :
+    {
+        . = ALIGN(4);
+        PROVIDE(__reserved_for_main_stack_start__ = .);
+        KEEP(*(.reserved_for_stack))
+        . = ALIGN(4);
+        . = _Main_Stack_Size;
+        PROVIDE(__reserved_for_main_stack_end__ = .);
+        PROVIDE(_estack = __reserved_for_stack_end__);
+    } > RAM_D3
     
   /* Remove information from the standard libraries */
   /DISCARD/ :

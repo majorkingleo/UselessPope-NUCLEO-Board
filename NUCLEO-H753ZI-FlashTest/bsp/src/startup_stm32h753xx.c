@@ -8,6 +8,7 @@
 #include <stm32h753xx.h>
 
 extern void* _estack;
+extern void *__reserved_for_main_stack_start__;
 
 void Reset_Handler();
 void Default_Handler();
@@ -1217,8 +1218,11 @@ void __attribute__((weak, naked)) WAKEUP_PIN_IRQHandler()
 }
 
 #else
+
+void HardFault_Handler();
+
 void NMI_Handler() __attribute__((weak, alias("Default_Handler")));
-void HardFault_Handler() __attribute__((weak, alias("Default_Handler")));
+//void HardFault_Handler() __attribute__((weak, alias("Default_Handler")));
 void MemManage_Handler() __attribute__((weak, alias("Default_Handler")));
 void BusFault_Handler() __attribute__((weak, alias("Default_Handler")));
 void UsageFault_Handler() __attribute__((weak, alias("Default_Handler")));
@@ -1551,6 +1555,11 @@ void __attribute__((naked, noreturn)) Reset_Handler()
 {
   __asm("ldr sp, =_estack");
   SCB->VTOR = (uint32_t)(g_pfnVectors);
+
+  char* b_end = (char*)(&_estack);
+  char* b_start = (char*)(&__reserved_for_main_stack_start__);
+  unsigned size = b_end - b_start;
+  memset( b_start, 0xa5, size - 1024 );
 
   void **pSource, **pDest;
   for (pSource = &_sidata, pDest = &_sdata; pDest < &_edata; pSource++, pDest++)
