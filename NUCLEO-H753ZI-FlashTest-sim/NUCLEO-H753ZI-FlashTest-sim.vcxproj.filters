@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="libco\libco.c">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\libco</Filter>
+    </ClCompile>
+    <ClCompile Include="os\src\sim_os.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\os\src</Filter>
+    </ClCompile>
+    <ClCompile Include="bsp\src\sim_internal_fs.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\bsp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="bsp\src\sim_analog_value_publisher.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\bsp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="bsp\src\sim_bsp_led.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\bsp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="bsp\src\sim_bsp_uart_usb.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\bsp\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\CppUtilsUartDebug.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\LockedDebugStream.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\main.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\task_status_led.cpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cformat.cc">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\static_format.cc">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\static_debug_exception.cc">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\stderr_exception.cc">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\string_utils.cc">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\utf8_util.cc">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\xml.cc">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\CpputilsDebug.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\OutDebug.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SerialCommandParser\src\serial_command_parser.cpp">
+      <Filter>SerialCommandParser\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFace.cc">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsFileBuffer.cc">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleIni.cc">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\crc\crc.c">
+      <Filter>simpleflashfs\src\crc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimFlashMemoryPc.cc">
+      <Filter>simpleflashfs\src\sim_pc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimSTM32InternalFlashPc.cc">
+      <Filter>simpleflashfs\src\sim_pc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format2.cc">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\wformat2.cc">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\ColoredOutput.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\ConvertEncoding.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\DetectLocale.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="win-iconv\win_iconv.c">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\win-iconv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cpputils\cpputils\io\read_file.cc">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wlib\Publisher\src\wlib-Publisher.cpp">
+      <Filter>wlib\Publisher\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsConstants.cc">
+      <Filter>simpleflashfs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bslib\StringSink\src\bslib-StringSink.cpp">
+      <Filter>bslib\StringSink\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libco\libco.h">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\libco</Filter>
+    </ClInclude>
+    <ClInclude Include="os\inc\os.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\os\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\CppUtilsUartDebug.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\LockedDebugStream.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\task_status_led.h">
+      <Filter>NUCLEO-H753ZI-FlashTest\app\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\bsp\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp_internal_fs.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\bsp\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp_uart_usb.hpp">
+      <Filter>NUCLEO-H753ZI-FlashTest\bsp\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\tools_config.h">
+      <Filter>cpputils\cpputils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\checked.h">
+      <Filter>cpputils\cpputils\cpputilsshared\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\core.h">
+      <Filter>cpputils\cpputils\cpputilsshared\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\cpp11.h">
+      <Filter>cpputils\cpputils\cpputilsshared\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\cpp17.h">
+      <Filter>cpputils\cpputils\cpputilsshared\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\unchecked.h">
+      <Filter>cpputils\cpputils\cpputilsshared\utf8</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cformat.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\static_format.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\CyclicArray.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\FastDelivery.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\iterator.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\map_utils.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\pairs.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\range.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\ref.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\span_vector.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_debug_exception.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_list.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_string.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_vector.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\stderr_exception.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\string_adapter.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\string_utils.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\TupleReverse.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8_util.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\xml.h">
+      <Filter>cpputils\cpputils\cpputilsshared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\CpputilsDebug.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\OutDebug.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SerialCommandParser\inc\serial_command_parser.hpp">
+      <Filter>SerialCommandParser\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\inc\bslib.hpp">
+      <Filter>bslib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Buzzer_Interface\inc\bslib-Buzzer_Interface.hpp">
+      <Filter>bslib\Buzzer_Interface\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Container\inc\bslib-Container.hpp">
+      <Filter>bslib\Container\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Container\inc\bslib-MPSC.hpp">
+      <Filter>bslib\Container\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Container\inc\bslib-SPSC.hpp">
+      <Filter>bslib\Container\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\GPIO\inc\bslib-GPIO.hpp">
+      <Filter>bslib\GPIO\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\HWCoding\inc\bslib-HWCoding.hpp">
+      <Filter>bslib\HWCoding\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\JukeBox\inc\bslib-JukeBox.hpp">
+      <Filter>bslib\JukeBox\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\LED\inc\bslib-LED.hpp">
+      <Filter>bslib\LED\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\PowerObserver\inc\bslib-PowerObserver_Interface.hpp">
+      <Filter>bslib\PowerObserver\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-LF_publisher.hpp">
+      <Filter>bslib\Publisher\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-Publisher.hpp">
+      <Filter>bslib\Publisher\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-SPSC_subscriber.hpp">
+      <Filter>bslib\Publisher\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\StringSink\inc\bslib-StringSink.hpp">
+      <Filter>bslib\StringSink\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\Utility_Interfaces\inc\bslib-utility_Interfaces.hpp">
+      <Filter>bslib\Utility_Interfaces\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bslib\VersionNumber\inc\bslib-VersionNumber_Interface.hpp">
+      <Filter>bslib\VersionNumber\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\BLOB\inc\wlib-BLOB.hpp">
+      <Filter>wlib\BLOB\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\Callback\inc\wlib-Callback.hpp">
+      <Filter>wlib\Callback\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\Container\inc\wlib-Container.hpp">
+      <Filter>wlib\Container\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_8.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_16_ccitt.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_32.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_64_go_iso.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_Interface.hpp">
+      <Filter>wlib\CRC\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\HASH\inc\wlib-HASH.hpp">
+      <Filter>wlib\HASH\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\inc\wlib.hpp">
+      <Filter>wlib\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wlib\Publisher\inc\wlib-Publisher.hpp">
+      <Filter>wlib\Publisher\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ex-math\inc\exmath.hpp">
+      <Filter>ex-math\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ex-math\intervals\inc\exmath-intervals.hpp">
+      <Filter>ex-math\intervals\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\ex-math\statistics\inc\exmath-statistics.hpp">
+      <Filter>ex-math\statistics\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFace.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFaceConfig.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFs2FlashPages.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsFileBuffer.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsNoDel.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleIni.h">
+      <Filter>simpleflashfs\src_2face</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\crc\crc.h">
+      <Filter>simpleflashfs\src\crc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\base\SimpleFlashFsBase.h">
+      <Filter>simpleflashfs\src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\base\SimpleFlashFsPageSet.h">
+      <Filter>simpleflashfs\src\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\static\SimpleFlashFsStatic.h">
+      <Filter>simpleflashfs\src\static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimFlashMemoryPc.h">
+      <Filter>simpleflashfs\src\sim_pc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimSTM32InternalFlashPc.h">
+      <Filter>simpleflashfs\src\sim_pc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\static\SimpleFlashFsStaticConfig.h">
+      <Filter>simpleflashfs\src\static</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cwformat.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format2.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\wformat2.h">
+      <Filter>cpputils\cpputils\cpputilsshared\format</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\ColoredOutput.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\ConvertEncoding.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\DetectLocale.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="win-iconv\iconv.h">
+      <Filter>NUCLEO-H753ZI-FlashTest-sim\win-iconv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cpputils\cpputils\io\read_file.h">
+      <Filter>cpputils\cpputils\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsConstants.h">
+      <Filter>simpleflashfs\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsFileInterface.h">
+      <Filter>simpleflashfs\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsFlashMemoryInterface.h">
+      <Filter>simpleflashfs\src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim">
+      <UniqueIdentifier>{44e5c575-36de-46c3-b8c2-9811faf0bd45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\libco">
+      <UniqueIdentifier>{8811d8e1-cab0-48fe-a42b-a2074af4600e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\os">
+      <UniqueIdentifier>{0ef16268-e593-4335-9ccf-fa052f63d29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\os\inc">
+      <UniqueIdentifier>{7c1430da-77c2-4179-a538-62a1ca4a028d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\os\src">
+      <UniqueIdentifier>{9490c98d-5c41-4a7d-8698-4080864e9232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\bsp">
+      <UniqueIdentifier>{49e1bf11-20f4-4577-a088-e4bffbbf08ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\bsp\src">
+      <UniqueIdentifier>{fb29ccad-c775-4068-967d-e0f75f9d5570}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest">
+      <UniqueIdentifier>{907d09dd-444a-4702-b5bb-c3adebc1fd60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest\app">
+      <UniqueIdentifier>{34d43c2f-3755-4d15-be01-4022a24a859b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest\app\src">
+      <UniqueIdentifier>{53135386-40dd-49e0-96cd-2ed31c410c37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest\bsp">
+      <UniqueIdentifier>{846a7244-bae2-4c34-9c39-fff2eabfc147}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest\bsp\inc">
+      <UniqueIdentifier>{80472f8e-d6c5-4dcb-ab31-244f4030b2cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils">
+      <UniqueIdentifier>{b0fcdf28-b06d-4bfe-bd10-909b3924de16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils\cpputils">
+      <UniqueIdentifier>{84e63b75-73f8-41ec-bf85-133cab155609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils\cpputils\cpputilsshared">
+      <UniqueIdentifier>{aec5d02a-e995-46c5-8828-98a86136c936}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils\cpputils\cpputilsshared\utf8">
+      <UniqueIdentifier>{97d65b62-2e1b-439f-9458-463b542ea9c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils\cpputils\cpputilsshared\format">
+      <UniqueIdentifier>{99d780bc-af6e-45d2-aa2c-452dcc0e17b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpputils\cpputils\io">
+      <UniqueIdentifier>{4c60d934-f8b6-4eae-8f3b-ab670ce040b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SerialCommandParser">
+      <UniqueIdentifier>{b38bb04c-043b-437f-a8bd-c701d6b07726}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SerialCommandParser\inc">
+      <UniqueIdentifier>{770d78c8-898a-4229-a439-f0475bbe92db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SerialCommandParser\src">
+      <UniqueIdentifier>{28b3c4af-8354-4655-8cf5-3d71a4728ad6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib">
+      <UniqueIdentifier>{c1e75537-4319-4dc2-b42f-17c19c237535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\inc">
+      <UniqueIdentifier>{36829937-61b0-4521-bb60-63cbda053508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Buzzer_Interface">
+      <UniqueIdentifier>{cd96e2eb-ebcd-4f66-8867-ca550d396809}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Buzzer_Interface\inc">
+      <UniqueIdentifier>{1e4ce3aa-c8ef-43e1-8551-a0dc39d272ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Container">
+      <UniqueIdentifier>{d7f6f9a3-5470-4f9c-8579-08c2a379e63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Container\inc">
+      <UniqueIdentifier>{ea668375-3b29-4168-8339-12d75b974b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\GPIO">
+      <UniqueIdentifier>{ded61183-7460-4178-88d8-74982232439c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\GPIO\inc">
+      <UniqueIdentifier>{e346e834-504c-4e86-a5a7-e8d71b0a6d61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\HWCoding">
+      <UniqueIdentifier>{5b730cd6-3453-479b-b279-ee603566800c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\HWCoding\inc">
+      <UniqueIdentifier>{a31fd0d7-75a5-429d-a0e5-09ac8ec7342c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\JukeBox">
+      <UniqueIdentifier>{2e0157f6-a323-41b2-8602-93ffca0e8acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\JukeBox\inc">
+      <UniqueIdentifier>{bc195856-a0e1-4354-a318-3ec3bf9ffeaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\LED">
+      <UniqueIdentifier>{17a0108c-3dba-4063-8f3e-31b14eb41767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\LED\inc">
+      <UniqueIdentifier>{8610e1e8-0701-4a4d-acdf-4c52f304ff66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\PowerObserver">
+      <UniqueIdentifier>{f221777a-c6a1-427b-bc09-18b4896d4fed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\PowerObserver\inc">
+      <UniqueIdentifier>{1be4b0f9-29d6-4063-8b40-004c932d9233}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Publisher">
+      <UniqueIdentifier>{2f19927c-99d6-4bc2-919d-33f13a3740ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Publisher\inc">
+      <UniqueIdentifier>{89b73eae-db82-4caf-9c1e-9a631128d357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\StringSink">
+      <UniqueIdentifier>{d90d3833-2fa2-44e3-a6de-11262cfdc4a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\StringSink\inc">
+      <UniqueIdentifier>{0e93e201-5f58-4165-97d0-6753254f0591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Utility_Interfaces">
+      <UniqueIdentifier>{d713632b-c5ee-498a-8a06-a25595487c53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\Utility_Interfaces\inc">
+      <UniqueIdentifier>{3ac489ca-7b7f-4bbb-beec-30f55a9a4bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\VersionNumber">
+      <UniqueIdentifier>{7ef3c64c-9145-4562-858b-8bbf0ce574a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\VersionNumber\inc">
+      <UniqueIdentifier>{8ef38d79-4408-432d-887c-c220257317e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib">
+      <UniqueIdentifier>{a11e7463-6506-4e1a-ab24-c200b07c4368}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\BLOB">
+      <UniqueIdentifier>{5d0afc09-bed3-4604-9153-98416327fc4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\BLOB\inc">
+      <UniqueIdentifier>{6a8d0b3a-a622-4ccb-a44d-debca9b08c97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Callback">
+      <UniqueIdentifier>{5e7183c2-ca28-4c8b-bd8c-1213bbaeafd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Callback\inc">
+      <UniqueIdentifier>{65316bb2-4465-4737-ad53-52fbbc3b9dde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Container">
+      <UniqueIdentifier>{e4d6c185-c642-43ee-9a56-64c5d7cce7a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Container\inc">
+      <UniqueIdentifier>{58f00812-49e9-44c8-b476-42520335a3e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\CRC">
+      <UniqueIdentifier>{a4c0cdfd-ebbd-44c6-a3dc-bcea768684c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\CRC\inc">
+      <UniqueIdentifier>{1e289e75-5865-4118-8f64-5a63e88fb969}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\HASH">
+      <UniqueIdentifier>{41bfada4-fea4-47c9-81bb-f332468d1314}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\HASH\inc">
+      <UniqueIdentifier>{33a1b896-26c8-48d7-8620-304f30961482}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\inc">
+      <UniqueIdentifier>{f8b0ef12-a515-4c1d-be1c-d50b64267b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Publisher">
+      <UniqueIdentifier>{5fc3c1ea-bfa7-4fc2-aa96-b64248419d8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Publisher\inc">
+      <UniqueIdentifier>{47f57b9b-666b-42f9-90ee-feb4dcdc2ab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math">
+      <UniqueIdentifier>{9a08b34c-d3cc-4f6c-b12c-bb0304b01c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math\inc">
+      <UniqueIdentifier>{fedcd319-6ab2-487e-89be-4a9cc8a724c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math\intervals">
+      <UniqueIdentifier>{ce1619c3-f2e7-4996-9eb0-fec7bd4aa2ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math\intervals\inc">
+      <UniqueIdentifier>{bae82e30-8798-457b-b36e-f684d82440b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math\statistics">
+      <UniqueIdentifier>{d7f99a09-0e15-4819-aa06-1efcf65a2527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ex-math\statistics\inc">
+      <UniqueIdentifier>{11f10c86-8a2d-47f5-9308-fbe1a5743196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs">
+      <UniqueIdentifier>{9fade5b9-4877-4300-8649-eb91c328edbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src">
+      <UniqueIdentifier>{40f8bf78-d716-4be6-9341-a2a576607580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src_2face">
+      <UniqueIdentifier>{3a5afab7-4771-40f9-92e2-1397c4df536d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src\crc">
+      <UniqueIdentifier>{11ca7c23-b78b-4920-b6cb-3b1ee87d17e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src\base">
+      <UniqueIdentifier>{b8a821df-813e-4ad4-8034-38c75abc6846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src\sim_pc">
+      <UniqueIdentifier>{7f150c62-3067-4a44-b6cb-38f8954da97a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simpleflashfs\src\static">
+      <UniqueIdentifier>{04f0048e-04ce-4811-ae22-c5467614a83b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NUCLEO-H753ZI-FlashTest-sim\win-iconv">
+      <UniqueIdentifier>{323370f0-2e6f-40ed-92b5-2afbb93ad275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="wlib\Publisher\src">
+      <UniqueIdentifier>{0cb31e94-2c8e-4934-a468-3186ced6208a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bslib\StringSink\src">
+      <UniqueIdentifier>{db872499-7b86-4fbd-9320-a3ee72c140ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

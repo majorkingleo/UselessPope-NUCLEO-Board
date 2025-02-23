@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\bslib\StringSink\src\bslib-StringSink.cpp" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cformat.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format2.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\static_format.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\wformat2.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\static_debug_exception.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\stderr_exception.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\string_utils.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\utf8_util.cc" />
+    <ClCompile Include="..\cpputils\cpputils\cpputilsshared\xml.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\ColoredOutput.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\ConvertEncoding.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\CpputilsDebug.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\DetectLocale.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\OutDebug.cc" />
+    <ClCompile Include="..\cpputils\cpputils\io\read_file.cc" />
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\CppUtilsUartDebug.cpp" />
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\LockedDebugStream.cpp" />
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\main.cpp" />
+    <ClCompile Include="..\NUCLEO-H753ZI-FlashTest\app\src\task_status_led.cpp" />
+    <ClCompile Include="..\SerialCommandParser\src\serial_command_parser.cpp" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\crc\crc.c" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsConstants.cc" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimFlashMemoryPc.cc" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimSTM32InternalFlashPc.cc" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFace.cc">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+    </ClCompile>
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsFileBuffer.cc" />
+    <ClCompile Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleIni.cc" />
+    <ClCompile Include="..\wlib\Publisher\src\wlib-Publisher.cpp" />
+    <ClCompile Include="bsp\src\sim_analog_value_publisher.cpp" />
+    <ClCompile Include="bsp\src\sim_bsp_led.cpp" />
+    <ClCompile Include="bsp\src\sim_bsp_uart_usb.cpp" />
+    <ClCompile Include="bsp\src\sim_internal_fs.cpp" />
+    <ClCompile Include="libco\libco.c" />
+    <ClCompile Include="os\src\sim_os.cpp" />
+    <ClCompile Include="win-iconv\win_iconv.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\bslib\Buzzer_Interface\inc\bslib-Buzzer_Interface.hpp" />
+    <ClInclude Include="..\bslib\Container\inc\bslib-Container.hpp" />
+    <ClInclude Include="..\bslib\Container\inc\bslib-MPSC.hpp" />
+    <ClInclude Include="..\bslib\Container\inc\bslib-SPSC.hpp" />
+    <ClInclude Include="..\bslib\GPIO\inc\bslib-GPIO.hpp" />
+    <ClInclude Include="..\bslib\HWCoding\inc\bslib-HWCoding.hpp" />
+    <ClInclude Include="..\bslib\inc\bslib.hpp" />
+    <ClInclude Include="..\bslib\JukeBox\inc\bslib-JukeBox.hpp" />
+    <ClInclude Include="..\bslib\LED\inc\bslib-LED.hpp" />
+    <ClInclude Include="..\bslib\PowerObserver\inc\bslib-PowerObserver_Interface.hpp" />
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-LF_publisher.hpp" />
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-Publisher.hpp" />
+    <ClInclude Include="..\bslib\Publisher\inc\bslib-SPSC_subscriber.hpp" />
+    <ClInclude Include="..\bslib\StringSink\inc\bslib-StringSink.hpp" />
+    <ClInclude Include="..\bslib\Utility_Interfaces\inc\bslib-utility_Interfaces.hpp" />
+    <ClInclude Include="..\bslib\VersionNumber\inc\bslib-VersionNumber_Interface.hpp" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cformat.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\cwformat.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\format2.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\static_format.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\cpputilsformat\wformat2.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\CyclicArray.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\FastDelivery.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\iterator.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\map_utils.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\pairs.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\range.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\ref.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\span_vector.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_debug_exception.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_list.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_string.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\static_vector.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\stderr_exception.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\string_adapter.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\string_utils.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\TupleReverse.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\checked.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\core.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\cpp11.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\cpp17.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8\unchecked.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\utf8_util.h" />
+    <ClInclude Include="..\cpputils\cpputils\cpputilsshared\xml.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\ColoredOutput.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\ConvertEncoding.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\CpputilsDebug.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\DetectLocale.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\OutDebug.h" />
+    <ClInclude Include="..\cpputils\cpputils\io\read_file.h" />
+    <ClInclude Include="..\cpputils\tools_config.h" />
+    <ClInclude Include="..\ex-math\inc\exmath.hpp" />
+    <ClInclude Include="..\ex-math\intervals\inc\exmath-intervals.hpp" />
+    <ClInclude Include="..\ex-math\statistics\inc\exmath-statistics.hpp" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\CppUtilsUartDebug.hpp" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\LockedDebugStream.hpp" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\app\src\task_status_led.h" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp.hpp" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp_internal_fs.hpp" />
+    <ClInclude Include="..\NUCLEO-H753ZI-FlashTest\bsp\inc\bsp_uart_usb.hpp" />
+    <ClInclude Include="..\SerialCommandParser\inc\serial_command_parser.hpp" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\base\SimpleFlashFsBase.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\base\SimpleFlashFsPageSet.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\crc\crc.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsConstants.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsFileInterface.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\SimpleFlashFsFlashMemoryInterface.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimFlashMemoryPc.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\sim_pc\SimSTM32InternalFlashPc.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\static\SimpleFlashFsStatic.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src\static\SimpleFlashFsStaticConfig.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFace.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\H7TwoFaceConfig.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFs2FlashPages.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsFileBuffer.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleFlashFsNoDel.h" />
+    <ClInclude Include="..\simpleflashfs\simpleflashfs\src_2face\SimpleIni.h" />
+    <ClInclude Include="..\wlib\BLOB\inc\wlib-BLOB.hpp" />
+    <ClInclude Include="..\wlib\Callback\inc\wlib-Callback.hpp" />
+    <ClInclude Include="..\wlib\Container\inc\wlib-Container.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_16_ccitt.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_32.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_64_go_iso.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_8.hpp" />
+    <ClInclude Include="..\wlib\CRC\inc\wlib-CRC_Interface.hpp" />
+    <ClInclude Include="..\wlib\HASH\inc\wlib-HASH.hpp" />
+    <ClInclude Include="..\wlib\inc\wlib.hpp" />
+    <ClInclude Include="..\wlib\Publisher\inc\wlib-Publisher.hpp" />
+    <ClInclude Include="libco\libco.h" />
+    <ClInclude Include="os\inc\os.hpp" />
+    <ClInclude Include="win-iconv\iconv.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c2dbcea7-f388-48e0-9b84-fab3d71afba7}</ProjectGuid>
+    <RootNamespace>NUCLEOH753ZIFlashTestsim</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)\win-iconv;$(SolutionDir)\..\simpleflashfs\simpleflashfs\src\sim_pc;$(SolutionDir)\..\simpleflashfs\simpleflashfs\src\base;$(SolutionDir)\..\simpleflashfs\simpleflashfs\src_2face;$(SolutionDir)\..\ex-math\statistics\inc;$(SolutionDir)\..\ex-math\intervals\inc;$(SolutionDir)\..\ex-math\inc;$(SolutionDir)\..\wlib\Publisher\inc;$(SolutionDir)\..\wlib\inc;$(SolutionDir)\..\wlib\HASH\inc;$(SolutionDir)\..\wlib\CRC\inc;$(SolutionDir)\..\wlib\Callback\inc;$(SolutionDir)\..\wlib\Container\inc;$(SolutionDir)\..\wlib\BLOB\inc;$(SolutionDir)\..\bslib\VersionNumber\inc;$(SolutionDir)\..\bslib\Utility_Interfaces\inc;$(SolutionDir)\..\bslib\StringSink\inc;$(SolutionDir)\..\bslib\Publisher\inc;$(SolutionDir)\..\bslib\PowerObserver\inc;$(SolutionDir)\..\bslib\HWCoding\inc;$(SolutionDir)\..\bslib\LED\inc;$(SolutionDir)\..\bslib\JukeBox\inc;$(SolutionDir)\..\bslib\GPIO\inc;$(SolutionDir)\..\bslib\Container\inc;$(SolutionDir)\..\bslib\Buzzer_Interface\inc;$(SolutionDir)\..\bslib\inc;$(SolutionDir)\..\cpputils\cpputils\io;$(SolutionDir)\..\SerialCommandParser\inc;$(SolutionDir)\os\inc;$(SolutionDir)\libco;$(SolutionDir)\..\NUCLEO-H753ZI-FlashTest\bsp\inc;$(SolutionDir)\..\cpputils\cpputils\cpputilsshared\cpputilsformat;$(SolutionDir)\..\cpputils\cpputils\cpputilsshared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <AdditionalOptions>/Zc:__cplusplus /utf-8 /analyze:stacksize9000 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <Optimization>MinSpace</Optimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
