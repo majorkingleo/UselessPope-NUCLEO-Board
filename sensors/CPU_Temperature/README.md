@@ -1,0 +1,2 @@
+# Sensors CPU Temperature
+
