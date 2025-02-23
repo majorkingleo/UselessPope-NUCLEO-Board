@@ -66,17 +66,6 @@ namespace BSP
   wlib::CharPuplisher&        get_uart_input_debug();
   wlib::StringSink_Interface& get_uart_output_debug();
 
-  bslib::publisher::Publisher_Interface<BSP::analog_values_t>& get_analog_value_publisher();
-  //
-  //  struct signal_events_t
-  //  {
-  //    uint64_t time_stamp = 0;
-  //    uint64_t last_event = 0;
-  //    uint64_t diff = 0;
-  //    double   frequency  = 0;
-  //  };
-  //
-  //  wlib::publisher::Publisher_Interface<signal_events_t>& rotor_status();
 
 }    // namespace BSP
 

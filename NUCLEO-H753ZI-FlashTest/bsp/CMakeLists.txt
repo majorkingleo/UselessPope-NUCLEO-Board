@@ -20,10 +20,13 @@ target_include_directories(${target_name}
 
 target_sources(${target_name}
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/bsp.cpp"
+ PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/bsp_adc.cpp"
+ PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/bsp_dma.cpp"
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/bsp_uart_usb_hal.cpp" 
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/bsp_internal_fs.cpp" 
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/startup_stm32h753xx.c"
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/system_stm32h7xx.cpp"
+ PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/hardfault_handler.cpp"
  
  PRIVATE  "${CMAKE_CURRENT_LIST_DIR}/stm32_internal_flash/stm32fxxx_hal/stm32_internal_flash_raw_h7.cpp"
  PRIVATE  "${CMAKE_CURRENT_LIST_DIR}/stm32_internal_flash/stm32fxxx_hal/stm32_internal_flash_raw_base.cpp"

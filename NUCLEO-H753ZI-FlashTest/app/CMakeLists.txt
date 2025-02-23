@@ -13,6 +13,7 @@ add_executable(${target_name})
 
 target_include_directories(${target_name}
  PUBLIC  "${CMAKE_CURRENT_LIST_DIR}/inc"
+ PUBLIC  "${CMAKE_CURRENT_LIST_DIR}/src"
 )
 
 target_sources(${target_name}
@@ -20,7 +21,7 @@ target_sources(${target_name}
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/task_status_led.cpp"
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/CppUtilsUartDebug.cpp"
  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/LockedDebugStream.cpp"
- PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/AnalogValueLogger.cpp"
+ PRIVATE "${CMAKE_CURRENT_LIST_DIR}/src/AnalogValueLoggerAdc3.cpp"
 )
 
 if (${CMAKE_HOST_SYSTEM_NAME} STREQUAL "Windows")

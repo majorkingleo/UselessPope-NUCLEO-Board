@@ -26,7 +26,7 @@
 #include <SimpleIni.h>
 #include <SimpleFlashFsFileBuffer.h>
 #include <unistd.h>
-#include "AnalogValueLogger.hpp"
+#include "AnalogValueLoggerAdc3.hpp"
 
 using namespace Tools;
 using namespace app;
@@ -85,7 +85,7 @@ namespace
 class LogTemperature
 {
 public:
-  using analog_values_t = BSP::analog_values_t;
+  using analog_values_t = BSP::analog_values_adc3_t;
 
 private:
 
@@ -124,30 +124,13 @@ public:
 
   auto print(wlib::StringSink_Interface& sink) const -> void
   {
+#if 0
     auto tmp = this->get_analog_values();
     char buf[2048]{};
-    snprintf(buf, 2048,
-             "      NTC_max: %10.5f,       NTC_min: %10.5f,       NTC_mean: %10.5f,       NTC_var: %10.9E\n"
-             "NTC-BOARD_max: %10.5f, NTC-BOARD_min: %10.5f, NTC-BOARD_mean: %10.5f, NTC-BOARD_var: %10.9E\n"
-             "      CPU_max: %10.5f,       CPU_min: %10.5f,       CPU_mean: %10.5f,       CPU_var: %10.9E\n"
-             "\n"
-             "        i_max: %10.5f,         i_min: %10.5f,         i_mean: %10.5f,         i_var: %10.9E\n"
-             "       u1_max: %10.5f,        u1_min: %10.5f,        u1_mean: %10.5f,        u1_var: %10.9E\n"
-             "       u2_max: %10.5f,        u2_min: %10.5f,        u2_mean: %10.5f,        u2_var: %10.9E\n"
-             "\n"
-             "      AIR_max: %10.5f,       AIR_min: %10.5f,       AIR_mean: %10.5f,       AIR_var: %10.9E\n"
-             "     VREF_max: %10.5f,      VREF_min: %10.5f,      VREF_mean: %10.5f,      VREF_var: %10.9E\n",
-             tmp.ambient_temperature.get_max(), tmp.ambient_temperature.get_min(), tmp.ambient_temperature.get_mean(),
-             tmp.ambient_temperature.get_variance(),                                                                                                      //
-             tmp.board_temperature.get_max(), tmp.board_temperature.get_min(), tmp.board_temperature.get_mean(), tmp.board_temperature.get_variance(),    //
-             tmp.cpu_temperature.get_max(), tmp.cpu_temperature.get_min(), tmp.cpu_temperature.get_mean(), tmp.cpu_temperature.get_variance(),            //
-             tmp.current.get_max(), tmp.current.get_min(), tmp.current.get_mean(), tmp.current.get_variance(),                                            //
-             tmp.voltage_stage_1.get_max(), tmp.voltage_stage_1.get_min(), tmp.voltage_stage_1.get_mean(), tmp.voltage_stage_1.get_variance(),            //
-             tmp.voltage_stage_2.get_max(), tmp.voltage_stage_2.get_min(), tmp.voltage_stage_2.get_mean(), tmp.voltage_stage_2.get_variance(),            //
-             tmp.air_pressure.get_max(), tmp.air_pressure.get_min(), tmp.air_pressure.get_mean(), tmp.air_pressure.get_variance(),                        //
-             tmp.ref_voltage.get_max(), tmp.ref_voltage.get_min(), tmp.ref_voltage.get_mean(), tmp.ref_voltage.get_variance()                             //
-    );
+
+
     sink(buf);
+#endif
   }
 
   bool log_temp()
@@ -212,7 +195,7 @@ public:
   }
 
 private:
-  void new_analog_value(BSP::analog_values_t const& values)
+  void new_analog_value(BSP::analog_values_adc3_t const& values)
   {
     this->m_input_buffer.push_back(values);
     this->m_worker.notify();
@@ -273,7 +256,7 @@ public:
 	void print( wlib::StringSink_Interface& sink) const;
 };
 
-analog_value_logger* ANALOG_VALUE_LOGGER = nullptr;
+analog_value_logger_adc3* ANALOG_VALUE_LOGGER = nullptr;
 LogTemperature*      TEMPERATURE_LOGGER = nullptr;
 StackAnalyzer *STACK_ANALYZER = nullptr;
 
@@ -431,6 +414,7 @@ bool cmd_quit(bslib::StringSink_Interface& sink, std::string_view param)
 std::array<uint64_t,  1 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_status_led;
 std::array<uint64_t,  4 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_usb_uart_reader;
 std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_cmd_parser;
+std::array<uint64_t,  5 * 1024 / sizeof(uint64_t)> __attribute__((section(".reserved_for_stack")))       stack_adc3;
 std::array<uint64_t, 40 * 1024 / sizeof(uint64_t)> /*__attribute__((section(".reserved_for_stack")))*/ stack_main_array;
 std::span<uint64_t>                                                                                     stack_main(stack_main_array);
 
@@ -550,10 +534,10 @@ int main()
 
   static app::Serial_Commando_Parser::Parser<0> parser(usb_uart_input, line_buffer_parser, cmds_parser, sink, stack_cmd_parser );
 
-  static analog_value_logger anal_logger{ BSP::get_analog_value_publisher(), sink };
+  static analog_value_logger_adc3 anal_logger{ BSP::get_analog_value_adc3_publisher(), stack_adc3, sink };
   ANALOG_VALUE_LOGGER = &anal_logger;
 
-  static LogTemperature temperature_logger{ BSP::get_analog_value_publisher(), "cpu.ini" };
+  static LogTemperature temperature_logger{ BSP::get_analog_value_adc3_publisher(), "cpu.ini" };
   TEMPERATURE_LOGGER = &temperature_logger;
 
 
