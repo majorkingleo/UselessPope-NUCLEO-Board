@@ -1,0 +1,55 @@
+﻿{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "STM32H753_Base",
+      "description": "Target STM32H753 with the Visual Studio development environment.",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install/${presetName}",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/toolchain/cmake_toolchain_files/arm_gcc_13.2.1__STM32H753xx.cmake",
+        "CMAKE_OUTPUT_DIR": "${sourceDir}/out"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "intelliSenseMode": "linux-gcc-arm"
+        }
+      }
+    },
+    {
+      "name": "debug",
+      "displayName": "STM32H753 Debug",
+      "description": "Target STM32H753 with the Visual Studio development environment. (Debug)",
+      "inherits": "STM32H753_Base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "release",
+      "displayName": "STM32H753 Release",
+      "description": "Target STM32H753 with the Visual Studio development environment. (Release)",
+      "inherits": "STM32H753_Base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+  ],
+  "buildPresets": [
+    {
+      "verbose": false,
+      "name": "debug-NUCLEO-FlashTest",
+      "configurePreset": "debug",
+      "targets": [ "NUCLEO-H753ZI-FlashTest_uC" ]
+    },
+    {
+      "verbose": false,
+      "name": "release-NUCLEO-FlashTest",
+      "configurePreset": "release",
+      "targets": [ "NUCLEO-H753ZI-FlashTest_uC" ]
+    }
+  ]
+}

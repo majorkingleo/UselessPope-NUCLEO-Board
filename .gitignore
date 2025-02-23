@@ -1,0 +1,19 @@
+out/
+build/
+artifacts/
+.vs/
+*.user
+
+__pycache__/
+
+# latex tmp-files
+*.aux
+*.log
+*.toc
+
+toolchain/**
+!toolchain/*
+
+*.o
+.deps
+.dirstamp
